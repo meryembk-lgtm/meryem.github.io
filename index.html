@@ -1,16 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hello World</title>
-  <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOODLY | Essential Comfort</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1 id="message">Hello World</h1>
-  <button onclick="changeText()">Click me</button>
+    <div class="bg-blur"></div>
 
-  <script src="index.js"></script>
+    <nav>
+        <div class="logo">HOODLY</div>
+        <div class="nav-links">
+            <a href="#collection">Collection</a>
+            <a href="#">About</a>
+            <a href="#" class="cart-link">Cart (0)</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="hero-content">
+            <h1 class="reveal-text">REDESIGNING THE HOODIE.</h1>
+            <p>Minimalist essentials for the modern wardrobe.</p>
+            <a href="#collection" class="btn">Shop Collection</a>
+        </div>
+    </header>
+
+    <main id="collection">
+        <div class="section-title">
+            <span>01</span>
+            <h2>Current Drop</h2>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&q=80&w=600" alt="Grey Hoodie">
+                </div>
+                <div class="product-info">
+                    <h3>The Core Hoodie - Slate</h3>
+                    <p>$85.00</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1513789172139-c1f2139b30fa?auto=format&fit=crop&q=80&w=600" alt="Black Hoodie">
+                </div>
+                <div class="product-info">
+                    <h3>The Core Hoodie - Onyx</h3>
+                    <p>$85.00</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80&w=600" alt="Cream Hoodie">
+                </div>
+                <div class="product-info">
+                    <h3>The Core Hoodie - Sand</h3>
+                    <p>$85.00</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 HOODLY Studio. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
