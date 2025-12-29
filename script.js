@@ -1,31 +1,32 @@
-// Simple scroll reveal effect
-const observerOptions = {
-    threshold: 0.1
-};
+let cart = [];
+let total = 0;
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
-    });
-}, observerOptions);
+function addToCart(name, price) {
+  cart.push({ name, price });
+  total += price;
 
-// Select all product cards to animate
-document.querySelectorAll('.product-card').forEach(card => {
-    card.style.opacity = "0";
-    card.style.transform = "translateY(30px)";
-    card.style.transition = "all 0.8s ease-out";
-    observer.observe(card);
-});
+  document.getElementById("cart-count").innerText = cart.length;
+  renderCart();
+}
 
-// Smooth scroll for nav links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+function renderCart() {
+  const cartItems = document.getElementById("cart-items");
+  cartItems.innerHTML = "";
+
+  cart.forEach(item => {
+    const li = document.createElement("li");
+    li.innerText = `${item.name} - $${item.price}`;
+    cartItems.appendChild(li);
+  });
+
+  document.getElementById("total").innerText = total;
+}
+
+function checkout() {
+  alert(
+    "This is a demo checkout.\n\nTo accept real payments, connect Stripe Checkout with a backend."
+  );
+
+  // Example redirect to Stripe Checkout (replace later)
+  // window.location.href = "https://buy.stripe.com/test_xxxxx";
+}
