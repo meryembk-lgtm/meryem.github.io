@@ -1,32 +1,30 @@
-let cart = [];
-let total = 0;
+// Simple Cart Logic
+let cartCount = 0;
+const cartBtn = document.querySelector('.cart-btn');
+const addButtons = document.querySelectorAll('.quick-add');
 
-function addToCart(name, price) {
-  cart.push({ name, price });
-  total += price;
+addButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        cartCount++;
+        cartBtn.textContent = `Cart (${cartCount})`;
+        
+        // Creative feedback
+        button.textContent = "Added!";
+        button.style.backgroundColor = "#D27D2D";
+        button.style.color = "white";
 
-  document.getElementById("cart-count").innerText = cart.length;
-  renderCart();
-}
+        setTimeout(() => {
+            button.textContent = "Add to Cart";
+            button.style.backgroundColor = "rgba(255, 255, 255, 0.9)";
+            button.style.color = "black";
+        }, 1500);
+    });
+});
 
-function renderCart() {
-  const cartItems = document.getElementById("cart-items");
-  cartItems.innerHTML = "";
-
-  cart.forEach(item => {
-    const li = document.createElement("li");
-    li.innerText = `${item.name} - $${item.price}`;
-    cartItems.appendChild(li);
-  });
-
-  document.getElementById("total").innerText = total;
-}
-
-function checkout() {
-  alert(
-    "This is a demo checkout.\n\nTo accept real payments, connect Stripe Checkout with a backend."
-  );
-
-  // Example redirect to Stripe Checkout (replace later)
-  // window.location.href = "https://buy.stripe.com/test_xxxxx";
-}
+// Smooth Scroll for "Shop" link
+document.querySelector('a[href^="#"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+    });
+});
