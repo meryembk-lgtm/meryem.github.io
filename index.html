@@ -1,54 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HOODLY | Streetwear</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOODLY | Essential Comfort</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>HOODLY</h1>
-    <nav>
-      <a href="#shop">Shop</a>
-      <a href="#cart">Cart (<span id="cart-count">0</span>)</a>
+    <nav class="navbar">
+        <div class="logo">HOODLY</div>
+        <ul class="nav-links">
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#" class="cart-btn">Cart (0)</a></li>
+        </ul>
     </nav>
-  </header>
 
-  <section class="hero">
-    <h2>Built for the Streets</h2>
-    <p>Premium hoodies. Minimal design.</p>
-  </section>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Wear the Warmth.</h1>
+            <p>Minimalist hoodies designed for the slow-paced life.</p>
+            <a href="#shop" class="btn">Explore Collection</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80" alt="Model wearing a beige hoodie">
+        </div>
+    </header>
 
-  <section id="shop" class="products">
-    <div class="product">
-      <img src="https://via.placeholder.com/300" alt="Hoodie">
-      <h3>Classic Black Hoodie</h3>
-      <p>$59</p>
-      <button onclick="addToCart('Classic Black Hoodie', 59)">Add to Cart</button>
-    </div>
+    <section id="shop" class="products">
+        <h2 class="section-title">The Seasonal Drop</h2>
+        <div class="grid">
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1513373319109-eb154073eb0b?auto=format&fit=crop&w=600&q=80" alt="Model in Clay Hoodie">
+                    <button class="quick-add">Add to Cart</button>
+                </div>
+                <h3>Oversized Clay</h3>
+                <p>$65.00</p>
+            </div>
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=600&q=80" alt="Minimalist White Hoodie">
+                    <button class="quick-add">Add to Cart</button>
+                </div>
+                <h3>Sand Essential</h3>
+                <p>$70.00</p>
+            </div>
+            <div class="product-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1521223344201-d169129f7b7d?auto=format&fit=crop&w=600&q=80" alt="Model in Dark Mocha Hoodie">
+                    <button class="quick-add">Add to Cart</button>
+                </div>
+                <h3>Midnight Mocha</h3>
+                <p>$65.00</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="product">
-      <img src="https://via.placeholder.com/300" alt="Hoodie">
-      <h3>Grey Oversized Hoodie</h3>
-      <p>$65</p>
-      <button onclick="addToCart('Grey Oversized Hoodie', 65)">Add to Cart</button>
-    </div>
-  </section>
+    <footer>
+        <p>&copy; 2024 HOODLY. Stay Warm.</p>
+    </footer>
 
-  <section id="cart" class="cart">
-    <h2>Your Cart</h2>
-    <ul id="cart-items"></ul>
-    <h3>Total: $<span id="total">0</span></h3>
-
-    <button class="pay-btn" onclick="checkout()">Pay Now</button>
-  </section>
-
-  <footer>
-    <p>© 2025 HOODLY</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
