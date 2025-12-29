@@ -1,67 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOODLY | Essential Comfort</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* Color Palette */
+:root {
+    --bg-warm: #FAF9F6;      /* Off-white/Cream */
+    --accent-clay: #D27D2D;   /* Muted Terracotta */
+    --text-main: #3E3636;     /* Soft Charcoal */
+    --card-bg: #F3EFE0;       /* Lighter Sand */
+    --transition: all 0.3s ease;
+}
 
-    <nav class="navbar">
-        <div class="logo">HOODLY</div>
-        <ul class="nav-links">
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#">Our Story</a></li>
-            <li><a href="#" class="cart-btn">Cart (0)</a></li>
-        </ul>
-    </nav>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Wear the Warmth.</h1>
-            <p>Minimalist hoodies designed for the slow-paced life.</p>
-            <a href="#shop" class="btn">Explore Collection</a>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80" alt="Model wearing a beige hoodie">
-        </div>
-    </header>
+body {
+    background-color: var(--bg-warm);
+    color: var(--text-main);
+    line-height: 1.6;
+}
 
-    <section id="shop" class="products">
-        <h2 class="section-title">The Seasonal Drop</h2>
-        <div class="grid">
-            <div class="product-card">
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1513373319109-eb154073eb0b?auto=format&fit=crop&w=600&q=80" alt="Model in Clay Hoodie">
-                    <button class="quick-add">Add to Cart</button>
-                </div>
-                <h3>Oversized Clay</h3>
-                <p>$65.00</p>
-            </div>
-            <div class="product-card">
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=600&q=80" alt="Minimalist White Hoodie">
-                    <button class="quick-add">Add to Cart</button>
-                </div>
-                <h3>Sand Essential</h3>
-                <p>$70.00</p>
-            </div>
-            <div class="product-card">
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1521223344201-d169129f7b7d?auto=format&fit=crop&w=600&q=80" alt="Model in Dark Mocha Hoodie">
-                    <button class="quick-add">Add to Cart</button>
-                </div>
-                <h3>Midnight Mocha</h3>
-                <p>$65.00</p>
-            </div>
-        </div>
-    </section>
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 10%;
+    background: transparent;
+}
 
-    <footer>
-        <p>&copy; 2024 HOODLY. Stay Warm.</p>
-    </footer>
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5% 10%;
+    min-height: 80vh;
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0px var(--card-bg);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--text-main);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 1rem;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--accent-clay);
+    transform: translateY(-3px);
+}
+
+/* Product Grid */
+.products {
+    padding: 5rem 10%;
+}
+
+.section-title {
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.product-card {
+    text-align: center;
+}
+
+.img-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: var(--card-bg);
+    margin-bottom: 1rem;
+}
+
+.img-container img {
+    width: 100%;
+    display: block;
+    transition: var(--transition);
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.quick-add {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.product-card:hover .quick-add {
+    bottom: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 4rem;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero { flex-direction: column; text-align: center; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-image { margin-top: 3rem; }
+}
